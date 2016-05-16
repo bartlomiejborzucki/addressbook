@@ -1,0 +1,67 @@
+<md-dialog aria-label="Contact"  ng-cloak>
+    <form name="contactForm" novalidate >
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{ ctrl.toolbarTitle }}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="ctrl.cancel()">
+                    <md-icon md-svg-src="/assets/icons/ic_close_black_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" layout="column">
+                <md-input-container>
+                    <label>First name</label>
+                    <input name="firstName" ng-model="ctrl.contact.firstName" required>
+                    <div ng-messages="contactForm.firstName.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Last name</label>
+                    <input name="lastName" ng-model="ctrl.contact.lastName" required>
+                    <div ng-messages="contactForm.lastName.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Email</label>
+                    <input name="email" ng-model="ctrl.contact.email" type="email" required>
+                    <div ng-messages="contactForm.email.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="email">Please enter a valid email address!</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Country</label>
+                    <md-select name="country" ng-model="ctrl.contact.country" required>
+                        <md-option ng-repeat="country in ctrl.countries" value="{{country.name}}">
+                            {{country.name}}
+                        </md-option>
+                    </md-select>
+                    <div ng-messages="contactForm.country.$error">
+                        <div ng-message="required">This is required.</div>
+
+                    </div>
+                </md-input-container>
+
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-primary" ng-click="ctrl.save()" ng-disabled="contactForm.$invalid">
+                Save
+            </md-button>
+            <md-button class="md-warn" ng-click="ctrl.remove()" ng-hide="ctrl.new">
+                Remove
+            </md-button>
+            <md-button ng-click="ctrl.cancel()" style="margin-right:20px;">
+                Cancel
+            </md-button>
+
+        </md-dialog-actions>
+    </form>
+</md-dialog>
