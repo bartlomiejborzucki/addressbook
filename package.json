@@ -19,8 +19,7 @@
     "angular-mocks": "^1.5.5",
     "angular-route": "^1.5.5",
     "angular-sanitize": "^1.5.5",
-    "angular-ui-router": "^0.2.18",
-    "country-list": "0.0.3"
+    "angular-ui-router": "^0.2.18"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
