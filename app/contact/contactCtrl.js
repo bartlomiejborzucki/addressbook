@@ -1,6 +1,3 @@
-import {countries} from '../countries';
-
-
 export default ngModule => {
 
     class ContactCtrl {

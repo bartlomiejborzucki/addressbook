@@ -12,6 +12,20 @@
     </md-list-item>
 </md-list>
 
+<md-content  ng-show="!ctrl.contacts.length">
+
+<md-card>
+      <md-card-title>
+	Your addressbook is empty. 
+	
+      </md-card-title>
+      
+</md-card>
+
+
+</md-content>
+
+
 <md-fab-speed-dial style="position: fixed; bottom:26px; right:26px;z-index:1000">
     <md-fab-trigger>
         <md-button aria-label="menu" class="md-fab" ng-click="ctrl.addNewContact()">

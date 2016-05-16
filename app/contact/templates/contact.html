@@ -28,8 +28,8 @@
 
                 <md-input-container>
                     <label>Email</label>
-                    <input name="email" ng-model="ctrl.contact.email" type="email" required>
-                    <div ng-messages="contactForm.email.$error">
+                    <input name="email_contact" ng-model="ctrl.contact.email" type="email" required role="alert">
+                    <div ng-messages="contactForm.email_contact.$error">
                         <div ng-message="required">This is required.</div>
                         <div ng-message="email">Please enter a valid email address!</div>
                     </div>
